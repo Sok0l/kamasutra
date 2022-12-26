@@ -1,0 +1,13 @@
+
+  .content img {
+    width: 900px;
+    height: 30%;
+  
+  }
+  .avatar img{
+    padding-top: 10px;
+    width: 200px;
+  }
+  .descriptionBlock {
+    padding: 10px;
+  }

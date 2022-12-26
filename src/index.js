@@ -1,13 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+let postData = [
+  { id: 1, messege: "Hi, how are you?", count: 15 },
+  { id: 2, messege: "It's my first post", count: 30 },
+];
+let dialogsData = [
+  { id: 1, name: "Dima" },
+  { id: 2, name: "Lev" },
+  { id: 3, name: "Marina" },
+];
+let messages = [
+  { id: 1, message: "Hi" },
+  { id: 2, message: "How is youe it-kamasutra?" },
+  { id: 3, message: "Yo" },
+];
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <App postData={postData} dialogsData={dialogsData} messages={messages} />
   </React.StrictMode>
 );
 

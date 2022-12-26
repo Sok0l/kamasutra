@@ -1,0 +1,13 @@
+.nav {
+  display: grid;
+  grid-area: n;
+  background-color: aqua;
+  justify-content: center;
+  align-content: start;
+  padding-top: 20px;
+}
+
+.item  {
+  color: aliceblue;
+  
+}
