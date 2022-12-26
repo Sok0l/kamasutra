@@ -1,7 +1,14 @@
 import React from "react";
 import s from "./Nav.module.css";
+import Friends from "./Friends/Friends";
 
-const NavBar = () => {
+const NavBar = (props) => {
+  console.log(props.sidebar.friends);
+  let friendImg = () => {
+    props.sidebar.friends.map((elem) => (
+      <Friends src={elem.src} path={elem.id} />
+    ));
+  };
   return (
     <nav className={s.nav}>
       <div className={s.item}>
@@ -17,7 +24,15 @@ const NavBar = () => {
         <a href="/music">Music</a>
       </div>
       <div className={s.item}>
-        <a href="/settings">Settings</a>
+        <a href="/settings">
+          <h3>Settings</h3>
+        </a>
+      </div>
+      <div className={s.item}>
+        <a href="/friends">
+          <h2>Friends</h2>
+          {friendImg}
+        </a>
       </div>
     </nav>
   );
