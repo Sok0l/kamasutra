@@ -1,14 +1,16 @@
 import React from "react";
 import s from "./Nav.module.css";
-import Friends from "./Friends/Friends";
+// import Friends from "./Friends/Friends";
 
 const NavBar = (props) => {
-  console.log(props.sidebar.friends);
-  let friendImg = () => {
-    props.sidebar.friends.map((elem) => (
-      <Friends src={elem.src} path={elem.id} />
-    ));
-  };
+  // let friendImg = () => {
+  //   props.sidebar.friends.map((elem) => (
+  //     <Friends
+  //       // src={elem.src}
+  //       path={elem.id}
+  //     />
+  //   ));
+  // };
   return (
     <nav className={s.nav}>
       <div className={s.item}>
@@ -31,7 +33,7 @@ const NavBar = (props) => {
       <div className={s.item}>
         <a href="/friends">
           <h2>Friends</h2>
-          {friendImg}
+          {/* {friendImg} */}
         </a>
       </div>
     </nav>

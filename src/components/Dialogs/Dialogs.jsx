@@ -4,7 +4,6 @@ import DialogItem from "./DialogItem/DialogsItem";
 import Message from "./Message/Message";
 
 const Dialogs = (props) => {
-  console.log(props.dialogsData);
   let dialogsElevtyns = props.dialogsData.map((dialog) => (
     <DialogItem id={dialog.id} name={dialog.name} />
   ));
@@ -17,15 +16,22 @@ const Dialogs = (props) => {
 
   let addMessage = () => {
     let text = textMessage.current.value;
-    alert(text);
+    props.addMessage(text);
   };
-
+  let onMessageChange = () => {
+    let text = textMessage.current.value;
+    props.updateNewMessageText(text);
+  };
   return (
     <div className={s.dialogs}>
       <div className={s.dialogsItem}>{dialogsElevtyns}</div>
       <div className={s.messges}>{messagesElement}</div>
-      <textarea ref={textMessage}></textarea>
-      <button onClick={addMessage}></button>
+      <textarea
+        ref={textMessage}
+        onChange={onMessageChange}
+        value={props.newTextMessages}
+      ></textarea>
+      <button className={s.buttonPrimariRecalor} onClick={addMessage}>Add message</button>
     </div>
   );
 };

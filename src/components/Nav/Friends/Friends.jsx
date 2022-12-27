@@ -7,7 +7,10 @@ const Friends = (props) => {
   return (
     <div className={s.FriendsIMg}>
       <NavLink to={path}>
-        <img src={props.src} alt="alt" />
+        <img
+          // src={props.src}
+          alt="alt"
+        />
       </NavLink>
     </div>
   );
