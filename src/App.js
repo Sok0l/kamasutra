@@ -24,7 +24,7 @@ function App(props) {
               path="/profile"
               element={
                 <Profile
-                  postData={props.state.profilePage.postData}
+                  profilePage={props.state.profilePage}
                   dispatch={props.dispatch}
                 />
               }
@@ -33,8 +33,7 @@ function App(props) {
               path="dialogs/*"
               element={
                 <Dialogs
-                  dialogsData={props.state.dialogsPage.dialogsData}
-                  messages={props.state.dialogsPage.messages}
+                  dialogsPage={props.state.dialogsPage}
                   dispatch={props.dispatch}
                 />
               }

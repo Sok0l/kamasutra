@@ -1,3 +1,7 @@
+import sidebarReduser from "./sidebar-reduser";
+import dialogsReduser from "./dialogs-reduser";
+import profileReduser from "./profile-reducer";
+
 let store = {
   _state: {
     profilePage: {
@@ -80,34 +84,11 @@ let store = {
   subscribe(observer) {
     this._callSubscriber = observer;
   },
-
   dispatch(action) {
-    if (action.type === "ADD-POST") {
-      let newPost = {
-        id: 5,
-        messege: this._state.profilePage.newPostText,
-        count: 0,
-      };
-      this._state.profilePage.postData.push(newPost);
-      this._state.profilePage.newPostText = "";
-      this._callSubscriber(this._state);
-    } else if (action.type === "UPDATE-NEW-POST-TEXT") {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    } else if (action.type === "ADD-MESSAGE") {
-      let newMessage = {
-        id: 4,
-        message: this._state.dialogsPage.newTextMessages,
-        ava:
-          "https://decider.com/wp-content/uploads/2020/12/AVA-NETFLIX-REVIEW.jpg?quality=75&strip=all",
-      };
-      this._state.dialogsPage.messages.push(newMessage);
-      this._state.dialogsPage.newTextMessages = "";
-      this._callSubscriber(this._state);
-    } else if (action.type === "UPDATE-NEW-MESSAGE-TEXT") {
-      this._state.dialogsPage.newTextMessages = action.newMessage;
-      this._callSubscriber(this._state);
-    }
+    this._state.profilePage = profileReduser(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReduser(this._state.dialogsPage, action);
+    this._state.sidebar = sidebarReduser(this._state.sidebar, action);
+    this._callSubscriber(this._state);
   },
 };
 
