@@ -15,13 +15,13 @@ const Dialogs = (props) => {
   let textMessage = React.createRef();
 
   let addMessage = () => {
-    let text = textMessage.current.value;
-    props.addMessage(text);
+    props.dispatch({ type: "ADD-MESSAGE" });
   };
   let onMessageChange = () => {
     let text = textMessage.current.value;
-    props.updateNewMessageText(text);
+    props.dispatch({ type: "UPDATE-NEW-MESSAGE-TEXT", newMessage: text });
   };
+
   return (
     <div className={s.dialogs}>
       <div className={s.dialogsItem}>{dialogsElevtyns}</div>
@@ -30,8 +30,10 @@ const Dialogs = (props) => {
         ref={textMessage}
         onChange={onMessageChange}
         value={props.newTextMessages}
-      ></textarea>
-      <button className={s.buttonPrimariRecalor} onClick={addMessage}>Add message</button>
+      />
+      <button className={s.buttonPrimariRecalor} onClick={addMessage}>
+        Add message
+      </button>
     </div>
   );
 };
