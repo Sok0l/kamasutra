@@ -5,8 +5,9 @@ import {
   addPostActionCreator,
   updateNewPostTextActionCreator,
 } from "./../../../redux/profile-reducer";
+import MyPosts from "../MyPosts";
 
-const MyPosts = (props) => {
+const MyPostsContainer = (props) => {
   let postElements = props.profilePage.postData.map((post) => (
     <Post messege={post.messege} count={post.count} id={post.id} />
   ));
@@ -23,27 +24,7 @@ const MyPosts = (props) => {
     props.dispatch(action);
   };
 
-  return (
-    <div className={s.postsBlock}>
-      <h3>My posts</h3>
-      <div>
-        <div>
-          <textarea
-            onChange={onPostChange}
-            ref={newPostElement}
-            value={props.profilePage.newPostText}
-          />
-        </div>
-        <div>
-          <button className={s.buttonPrimariRecalor} onClick={addPost}>
-            Add Post
-          </button>
-        </div>
-      </div>
-      <div className={s.posts}></div>
-      {postElements}
-    </div>
-  );
+  return <MyPosts />;
 };
 
-export default MyPosts;
+export default MyPostsContainer;

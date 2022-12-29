@@ -1,7 +1,3 @@
-import sidebarReduser from "./sidebar-reduser";
-import dialogsReduser from "./dialogs-reduser";
-import profileReduser from "./profile-reducer";
-
 let store = {
   _state: {
     profilePage: {

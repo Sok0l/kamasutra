@@ -19,12 +19,14 @@ const Dialogs = (props) => {
   let textMessage = React.createRef();
 
   let addMessage = () => {
-    props.dispatch(addMessageActionCreator());
+    let action = addMessageActionCreator();
+    props.dispatch(action);
   };
   let onMessageChange = (event) => {
     let text = event.target.value;
     // let text = textMessage.current.value;
-    props.dispatch(updateNewMessageTextActionCreator(text));
+    let action = updateNewMessageTextActionCreator(text);
+    props.dispatch(action);
   };
 
   return (
@@ -38,7 +40,7 @@ const Dialogs = (props) => {
           onChange={onMessageChange}
           value={props.dialogsPage.newTextMessages}
         />
-      </div>{" "}
+      </div>
       <div>
         <button className={s.buttonPrimariRecalor} onClick={addMessage}>
           Add message
