@@ -1,4 +1,6 @@
-const sidebarReduser = (state, action) => {
+let anitialState = {};
+
+const sidebarReduser = (state = anitialState, action) => {
   return state;
 };
 
