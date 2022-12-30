@@ -3,12 +3,12 @@ import Header from "./components/Header/Header";
 import NavBar from "./components/Nav/Nav";
 import Profile from "./components/Profile/Profile";
 import "./App.css";
-import Dialogs from "./components/Dialogs/Dialogs";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Setting from "./components/Setting/Setting";
 import Friends from "./components/Nav/Friends/Friends";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 function App(props) {
   return (
@@ -20,24 +20,8 @@ function App(props) {
 
         <div className="app-content">
           <Routes>
-            <Route
-              path="/profile"
-              element={
-                <Profile
-                  profilePage={props.state.profilePage}
-                  dispatch={props.dispatch}
-                />
-              }
-            />
-            <Route
-              path="dialogs/*"
-              element={
-                <Dialogs
-                  dialogsPage={props.state.dialogsPage}
-                  dispatch={props.dispatch}
-                />
-              }
-            />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="dialogs/*" element={<DialogsContainer />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Setting />} />
