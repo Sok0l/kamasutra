@@ -48,18 +48,24 @@ let initialState = {
 const dialogsReduser = (state = initialState, action) => {
   switch (action.type) {
     case ADD_MESSAGE:
-      let newMessage = {
-        id: 4,
-        message: state.newTextMessages,
-        ava:
-          "https://decider.com/wp-content/uploads/2020/12/AVA-NETFLIX-REVIEW.jpg?quality=75&strip=all",
+      return {
+        ...state,
+        messages: [
+          ...state.messages,
+          {
+            id: 4,
+            message: state.newTextMessages,
+            ava:
+              "https://decider.com/wp-content/uploads/2020/12/AVA-NETFLIX-REVIEW.jpg?quality=75&strip=all",
+          },
+        ],
+        newTextMessages: "",
       };
-      state.newTextMessages = "";
-      state.messages.push(newMessage);
-      return state;
     case UPDATE_NEW_MESSAGE_TEXT:
-      state.newTextMessages = action.newMessage;
-      return state;
+      return {
+        ...state,
+        newTextMessages: action.newMessage,
+      };
     default:
       return state;
   }

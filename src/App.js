@@ -9,6 +9,7 @@ import Music from "./components/Music/Music";
 import Setting from "./components/Setting/Setting";
 import Friends from "./components/Nav/Friends/Friends";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 function App(props) {
   return (
@@ -26,6 +27,7 @@ function App(props) {
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Setting />} />
             <Route path="/friends" element={<Friends />} />
+            <Route path="/users" element={<UsersContainer />} />
           </Routes>
         </div>
       </div>
