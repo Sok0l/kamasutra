@@ -24,10 +24,14 @@ const NavBar = (props) => {
         <NavLink to="/music">Music </NavLink>
       </div>
       <div className={s.item}>
+        <NavLink to="/users">Users</NavLink>
+      </div>
+      <div className={s.item}>
         <NavLink to="/settings">
           <h3>Settings</h3>
         </NavLink>
       </div>
+
       <div className={s.item}>
         <NavLink to="/friends">
           <h2>Friends</h2>
