@@ -6,5 +6,10 @@
 
 .selectedPage {
     font-weight: bold;
-   
+    padding-right: 5px;
+    cursor: pointer;
+}
+.pages {
+    padding-right: 5px;
+    cursor: pointer;
 }
