@@ -1,46 +1,14 @@
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET-USERS";
+const SET_CURRENT_PAGE = "SET-CURRENT-PAGE";
+const SET_USER_TOTAL_COUNT = "SET-USER-TOTAL-COUNT";
 
 let initialState = {
-  users: [
-    {
-      id: 1,
-      photoUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYZw8Y8YK4Qe1HEHyzbFaBQvkF-i_6PceKyA&usqp=CAU",
-      followed: false,
-      fullName: "Dmitry",
-      status: "i like world!",
-      location: { city: "Minck", country: "Belarus" },
-    },
-    {
-      id: 2,
-      photoUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYZw8Y8YK4Qe1HEHyzbFaBQvkF-i_6PceKyA&usqp=CAU",
-      followed: true,
-      fullName: "Alex",
-      status: "i dont like world!",
-      location: { city: "Pskov", country: "Russia" },
-    },
-    {
-      id: 3,
-      photoUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYZw8Y8YK4Qe1HEHyzbFaBQvkF-i_6PceKyA&usqp=CAU",
-      followed: false,
-      fullName: "Max",
-      status: "i like pets!",
-      location: { city: "Kiev", country: "Ukraine" },
-    },
-    {
-      id: 4,
-      photoUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYZw8Y8YK4Qe1HEHyzbFaBQvkF-i_6PceKyA&usqp=CAU",
-      followed: true,
-      fullName: "Gitler",
-      status: "i am the best!",
-      location: { city: "Berlin", country: "Germany" },
-    },
-  ],
+  users: [],
+  pageSize: 5,
+  totalUsersCount: 20,
+  currentPage: 2,
 };
 
 const userReduser = (state = initialState, action) => {
@@ -66,7 +34,11 @@ const userReduser = (state = initialState, action) => {
         }),
       };
     case SET_USERS:
-      return { ...state, users: [...state.users, ...action.users] };
+      return { ...state, users: [...action.users] };
+    case SET_CURRENT_PAGE:
+      return { ...state, currentPage: action.currentPage };
+    case SET_USER_TOTAL_COUNT:
+      return { ...state, totalUsersCount: action.count };
     default:
       return state;
   }
@@ -80,4 +52,12 @@ export const unfollowAC = (userId) => ({
 });
 
 export const setUsersAC = (users) => ({ type: SET_USERS, users });
+export const setCurrentPageAC = (currentPage) => ({
+  type: SET_CURRENT_PAGE,
+  currentPage,
+});
+export const setUserTotalCountAC = (count) => ({
+  type: SET_USER_TOTAL_COUNT,
+  count,
+});
 export default userReduser;
