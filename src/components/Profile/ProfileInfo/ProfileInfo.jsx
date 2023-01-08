@@ -1,7 +1,12 @@
 import React from "react";
+import Preloader from "../../../common/Preloader/Preloader";
 import s from "./ProfileInfo.module.css";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+  if (!props.profile) {
+    return <Preloader />;
+  }
+
   return (
     <div>
       <img
@@ -9,12 +14,10 @@ const ProfileInfo = () => {
         alt="main"
       />
       <div className={s.avatar}>
-        <img
-          src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
-          alt="avatar"
-        />
+        <img alt="avatar" src={props.profile.photos.large} />
         <div className={s.descriptionBlock}>
           <h2>Лев Соколов</h2>
+
           <h3>Date of Birth: 27 may</h3>
           <h3>City: Pskov</h3>
           <h3>Education:BNTU</h3>
