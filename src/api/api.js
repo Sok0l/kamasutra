@@ -8,8 +8,10 @@ const instans = axios.create({
   },
 });
 
-export const getUsers = (currentPage, pageSize) => {
-  return instans
-    .get(`users?page=${currentPage}&count=${pageSize}`)
-    .then((response) => response.data);
+export const userAPI = {
+  getUsers(currentPage, pageSize) {
+    return instans
+      .get(`users?page=${currentPage}&count=${pageSize}`)
+      .then((response) => response.data);
+  },
 };
