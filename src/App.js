@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./components/Header/Header";
 import NavBar from "./components/Nav/Nav";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -9,19 +8,23 @@ import Setting from "./components/Setting/Setting";
 import Friends from "./components/Nav/Friends/Friends";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
+import WithUrlDataContainerComponent from "./components/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 function App(props) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
-        <Header />
+        <HeaderContainer />
 
         <NavBar sidebar="" />
 
         <div className="app-content">
           <Routes>
-            <Route path="/profile/*" element={<ProfileContainer />} />
+            <Route
+              path="/profile/:userId?"
+              element={<WithUrlDataContainerComponent />}
+            />
             <Route path="dialogs/*" element={<DialogsContainer />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
