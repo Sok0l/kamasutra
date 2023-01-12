@@ -8,7 +8,7 @@ const instans = axios.create({
   },
 });
 
-export const userAPI = {
+export const usersAPI = {
   getUsers(currentPage, pageSize) {
     return instans
       .get(`users?page=${currentPage}&count=${pageSize}`)
@@ -19,5 +19,14 @@ export const userAPI = {
   },
   unfollow(userId) {
     return instans.delete(`follow/${userId}`);
+  },
+  getProfile(userId) {
+    return instans.get(`profile/${userId}`);
+  },
+};
+
+export const authAPI = {
+  me() {
+    return instans.get("auth/me");
   },
 };
