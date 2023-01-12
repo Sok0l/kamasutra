@@ -14,4 +14,10 @@ export const userAPI = {
       .get(`users?page=${currentPage}&count=${pageSize}`)
       .then((response) => response.data);
   },
+  follow(userId) {
+    return instans.post(`follow/${userId}`);
+  },
+  unfollow(userId) {
+    return instans.delete(`follow/${userId}`);
+  },
 };
