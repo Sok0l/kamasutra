@@ -10,14 +10,13 @@ const ProfileInfo = (props) => {
 
   return (
     <div>
-      {/* <img
-        src="https://interier-foto.ru/wp-content/uploads/dlinnye-foto-2.jpg"
-        alt="main"
-      /> */}
       <div className={s.avatar}>
         <img alt="avatar" src={props.profile.photos.large} />
         <div className={s.descriptionBlock}>
-          <ProfileStatus status={"Hello"} />
+          <ProfileStatus
+            status={props.status}
+            updateStatus={props.updateStatus}
+          />
           <h2>Лев Соколов</h2>
           <h3>Date of Birth: 27 may</h3>
           <h3>City: Pskov</h3>
