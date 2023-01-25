@@ -1,4 +1,5 @@
 import React from "react";
+
 import s from "./FormControls.module.css";
 
 export const FormControl = ({ input, child, meta, ...props }) => {
@@ -16,4 +17,3 @@ export const FormControl = ({ input, child, meta, ...props }) => {
     </div>
   );
 };
-

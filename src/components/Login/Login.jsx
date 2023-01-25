@@ -7,9 +7,9 @@ import { login } from "../../redux/auth-reducer";
 import { Navigate } from "react-router-dom";
 import s from "../../common/Preloader/FormsControls/FormControls.module.css";
 
-const LoginForm = (props) => {
+const LoginForm = ({ handleSubmit, error }) => {
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div>
         <Field
           validate={[requiredField]}
@@ -38,7 +38,7 @@ const LoginForm = (props) => {
         />
         remember me
       </div>
-      {props.error && <div className={s.formSummoryError}>{props.error}</div>}
+      {error && <div className={s.formSummoryError}>{error}</div>}
       <div>
         <button>Login</button>
       </div>
