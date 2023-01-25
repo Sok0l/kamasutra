@@ -13,7 +13,7 @@ const ProfileStatusWithHooks = (props) => {
   };
   const deactivateEditMode = () => {
     setEditMode(false);
-    // props.updateStatus(status); не отправляет запрос
+    props.updateStatus(status);
   };
 
   const onStatusChange = (e) => {

@@ -1,6 +1,7 @@
 import {
   applyMiddleware,
   combineReducers,
+  compose,
   legacy_createStore as createStore,
 } from "redux";
 import sidebarReduser from "./sidebar-reduser";
@@ -21,8 +22,8 @@ let redusers = combineReducers({
   form: formReducer,
   app: appReduser,
 });
-let store = createStore(redusers, applyMiddleware(thunk));
 
-window.store = store;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(redusers, composeEnhancers(applyMiddleware(thunk)));
 
 export default store;

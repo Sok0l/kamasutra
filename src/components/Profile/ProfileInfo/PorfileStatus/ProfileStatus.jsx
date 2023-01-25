@@ -38,7 +38,7 @@ class ProfileStatus extends React.Component {
           <div>
             <span onDoubleClick={this.activateEditMode}>
               {/*  this.props.status  запрос на сервер не отправляется*/}
-              {this.state.status}
+              {this.props.status}
             </span>
           </div>
         )}

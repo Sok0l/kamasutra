@@ -29,7 +29,8 @@ const WAddNewPostForm = reduxForm({ form: "ProfileAddNewPostForm" })(
   AddNewPostForm
 );
 
-const MyPosts = (props) => {
+const MyPosts = React.memo((props) => {
+  console.log("myposts");
   let postElements = props.profilePage.postData.map((post) => (
     <Post
       messege={post.messege}
@@ -51,6 +52,6 @@ const MyPosts = (props) => {
       {postElements}
     </div>
   );
-};
+});
 
 export default MyPosts;
