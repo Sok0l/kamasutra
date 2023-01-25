@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import NavBar from "./components/Nav/Nav";
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Setting from "./components/Setting/Setting";
@@ -29,7 +29,7 @@ class App extends React.Component {
     if (!this.props.initialized) return <Preloader />;
 
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div className="app-wrapper">
           <HeaderContainer />
 
@@ -62,7 +62,7 @@ class App extends React.Component {
             </Routes>
           </div>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
