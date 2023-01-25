@@ -2,9 +2,16 @@
     font-weight: bold;
     padding-right: 5px;
     cursor: pointer;
-}
+    border: 2px solid black;
+} 
 
 .pages {
     padding-right: 5px;
     cursor: pointer;
+    border: 1px solid gray;
+    margin: 2px;
+}
+
+.paginator {
+    margin: 5px;
 }

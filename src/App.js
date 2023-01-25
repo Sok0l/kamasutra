@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import NavBar from "./components/Nav/Nav";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -6,9 +6,7 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Setting from "./components/Setting/Setting";
 import Friends from "./components/Nav/Friends/Friends";
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
-import WithUrlDataContainerComponent from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import { connect } from "react-redux";
@@ -16,6 +14,12 @@ import { initializeApp } from "./redux/app-reducer";
 import Preloader from "./common/Preloader/Preloader";
 import store from "./redux/react-store";
 import { Provider } from "react-redux";
+const DialogsContainer = React.lazy(() =>
+  import("./components/Dialogs/DialogsContainer")
+);
+const ProfileContainer = React.lazy(() =>
+  import("./components/Profile/ProfileContainer")
+);
 
 class App extends React.Component {
   componentDidMount() {
@@ -35,9 +39,20 @@ class App extends React.Component {
             <Routes>
               <Route
                 path="/profile/:userId?"
-                element={<WithUrlDataContainerComponent />}
+                element={
+                  <Suspense fallback={<Preloader />}>
+                    <ProfileContainer />
+                  </Suspense>
+                }
               />
-              <Route path="dialogs/*" element={<DialogsContainer />} />
+              <Route
+                path="dialogs/*"
+                element={
+                  <Suspense fallback={<Preloader />}>
+                    <DialogsContainer />
+                  </Suspense>
+                }
+              />
               <Route path="/news" element={<News />} />
               <Route path="/music" element={<Music />} />
               <Route path="/settings" element={<Setting />} />
