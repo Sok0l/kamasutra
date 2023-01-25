@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "//sok0l.github.io/kamasutra/precache-manifest.c4598851686e17e4da17762e4d7c2ba2.js"
+  "/kamasutra/precache-manifest.c667f55b3f14a5ba64c5e527fae94c4b.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("//sok0l.github.io/kamasutra/index.html", {
+workbox.routing.registerNavigationRoute("/kamasutra/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
