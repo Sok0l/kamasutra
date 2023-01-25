@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "9e0369b4029c7608d565",
+    "revision": "fff1102952ef9d034468",
     "url": "/kamasutra/static/css/main.92e87e34.chunk.css"
   },
   {
-    "revision": "9e0369b4029c7608d565",
-    "url": "/kamasutra/static/js/main.8d3de182.chunk.js"
+    "revision": "fff1102952ef9d034468",
+    "url": "/kamasutra/static/js/main.35053215.chunk.js"
   },
   {
     "revision": "02ef18534eb7362855fc",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/kamasutra/static/media/Bean Eater-1s-200px.f1776327.svg"
   },
   {
-    "revision": "2845d3babc0d730fa701f5a98cee5bd8",
+    "revision": "d4baf9d95a3e16859246be2519a4324b",
     "url": "/kamasutra/index.html"
   }
 ];

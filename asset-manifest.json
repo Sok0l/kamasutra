@@ -1,7 +1,7 @@
 {
   "main.css": "/kamasutra/static/css/main.92e87e34.chunk.css",
-  "main.js": "/kamasutra/static/js/main.8d3de182.chunk.js",
-  "main.js.map": "/kamasutra/static/js/main.8d3de182.chunk.js.map",
+  "main.js": "/kamasutra/static/js/main.35053215.chunk.js",
+  "main.js.map": "/kamasutra/static/js/main.35053215.chunk.js.map",
   "runtime~main.js": "/kamasutra/static/js/runtime~main.c75d195a.js",
   "runtime~main.js.map": "/kamasutra/static/js/runtime~main.c75d195a.js.map",
   "static/js/2.5155c3d7.chunk.js": "/kamasutra/static/js/2.5155c3d7.chunk.js",
@@ -15,7 +15,7 @@
   "static/js/5.ac30640b.chunk.js": "/kamasutra/static/js/5.ac30640b.chunk.js",
   "static/js/5.ac30640b.chunk.js.map": "/kamasutra/static/js/5.ac30640b.chunk.js.map",
   "index.html": "/kamasutra/index.html",
-  "precache-manifest.c667f55b3f14a5ba64c5e527fae94c4b.js": "/kamasutra/precache-manifest.c667f55b3f14a5ba64c5e527fae94c4b.js",
+  "precache-manifest.90a7825a74d0905fa36b1baea0181935.js": "/kamasutra/precache-manifest.90a7825a74d0905fa36b1baea0181935.js",
   "service-worker.js": "/kamasutra/service-worker.js",
   "static/css/3.409a2c62.chunk.css.map": "/kamasutra/static/css/3.409a2c62.chunk.css.map",
   "static/css/4.d30120c3.chunk.css.map": "/kamasutra/static/css/4.d30120c3.chunk.css.map",
