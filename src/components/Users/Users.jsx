@@ -26,6 +26,12 @@ const Users = ({
           unfollow={props.unfollow}
         />
       ))}
+      <Paginator
+        totalItemsCount={totalUsersCount}
+        pageSize={pageSize}
+        currentPage={currentPage}
+        onPageChanged={onPageChanged}
+      />
     </div>
   );
 };
