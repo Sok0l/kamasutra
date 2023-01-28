@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/kamasutra/precache-manifest.d296920c32b2e0de3381467238ea654f.js"
+  "/kamasutra/precache-manifest.add0fe5d5b35ab9e4cacfd6429ae5a06.js"
 );
 
 workbox.clientsClaim();
