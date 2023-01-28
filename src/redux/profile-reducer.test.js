@@ -5,8 +5,8 @@ it("new post shold be added", () => {
 
   let state = {
     postData: [
-      { id: 1, messege: "Hi, how are you?", count: 15 },
-      { id: 2, messege: "It's my first post", count: 30 },
+      { id: 1, message: "Hi, how are you?", count: 15 },
+      { id: 2, message: "It's my first post", count: 30 },
     ],
   };
 

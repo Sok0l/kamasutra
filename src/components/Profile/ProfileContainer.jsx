@@ -5,6 +5,7 @@ import {
   updateStatus,
   getStatus,
   savePhoto,
+  saveProfile,
 } from "../../redux/profile-reducer";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -30,7 +31,7 @@ class ProfileContainer extends React.Component {
   componentDidMount() {
     this.refreshProfile();
   }
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate(prevProps) {
     if (this.props.match.params.userId !== prevProps.match.params.userId)
       this.refreshProfile();
   }
@@ -43,6 +44,7 @@ class ProfileContainer extends React.Component {
         status={this.props.status}
         updateStatus={this.props.updateStatus}
         savePhoto={this.props.savePhoto}
+        saveProfile={this.props.saveProfile}
       />
     );
   }
@@ -63,5 +65,6 @@ export default compose(
     getStatus,
     updateStatus,
     savePhoto,
+    saveProfile,
   })
 )(ProfileContainer);
