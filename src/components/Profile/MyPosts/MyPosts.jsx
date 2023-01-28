@@ -33,7 +33,7 @@ const MyPosts = React.memo((props) => {
   console.log("myposts");
   let postElements = props.profilePage.postData.map((post) => (
     <Post
-      messege={post.messege}
+      message={post.message}
       count={post.count}
       key={post.id}
       id={post.id}

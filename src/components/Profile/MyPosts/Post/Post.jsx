@@ -8,7 +8,7 @@ const Post = (props) => {
         src="https://w7.pngwing.com/pngs/862/646/png-transparent-beard-hipster-male-man-avatars-xmas-giveaway-icon-thumbnail.png"
         alt="ava"
       />
-      {props.messege}
+      {props.message}
       <div>
         <span>{props.count} likes</span>
       </div>

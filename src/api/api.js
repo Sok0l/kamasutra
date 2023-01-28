@@ -45,6 +45,9 @@ export const profileAPI = {
       },
     });
   },
+  saveProfile(profile) {
+    return instans.put("profile", profile);
+  },
 };
 
 export const authAPI = {
