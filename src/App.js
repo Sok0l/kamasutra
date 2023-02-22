@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import NavBar from "./components/Nav/Nav";
 import "./App.css";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Setting from "./components/Setting/Setting";
@@ -22,8 +22,19 @@ const ProfileContainer = React.lazy(() =>
 );
 
 class App extends React.Component {
+  catchAllUnhanlesErrors = (promiseRejectionEvent) => {
+    alert("Some error occured");
+    console.error(promiseRejectionEvent);
+  };
   componentDidMount() {
     this.props.initializeApp();
+    window.addEventListener("unhandledrejection", this.promiseRejectionEvent);
+  }
+  componentWillUnmount() {
+    window.removeEventListener(
+      "unhandledrejection",
+      this.promiseRejectionEvent
+    );
   }
   render() {
     if (!this.props.initialized) return <Preloader />;
@@ -37,6 +48,7 @@ class App extends React.Component {
 
           <div className="app-content">
             <Routes>
+              <Route path="/" element={<Navigate to="/profile" />} />
               <Route
                 path="/profile/:userId?"
                 element={
@@ -59,6 +71,14 @@ class App extends React.Component {
               <Route path="/friends" element={<Friends />} />
               <Route path="/users" element={<UsersContainer />} />
               <Route path="/login" element={<Login />} />
+              <Route
+                path="*"
+                element={
+                  <div>
+                    <h1>404 NOT FOUND</h1>
+                  </div>
+                }
+              />
             </Routes>
           </div>
         </div>
