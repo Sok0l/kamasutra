@@ -1,1 +1,0 @@
-https://sok0l.github.io/kamasutra/#/profile
